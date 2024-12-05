@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Main</title>   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="main.css">  
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Caveat:wght@400..700&family=Marck+Script&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <style>
+        .card {
+            width: 100%; 
+        }
+        .card-img-top {
+            height: 350px; 
+            object-fit: cover; 
+        }
+        .sidebar {
+            padding: 20px;
+        }
+        #bookingFilters {
+            white-space: pre-wrap;
+        }
+        #price-range {
+            width: 200px; 
+        }
+        #bookingMessage {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="text-center">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+              <div class="d-flex align-items-center">
+                <a class="navbar-brand" href="#">
+                  <img src="logo.svg" alt="" width="90" height="60">
+                </a>
+            
+                <ul class="nav justify-content-center ms-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="services.html">Услуги</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="hotel.html">О гостинице</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="connection.html">Контакты</a>
+                  </li>
+                </ul>
+              </div>
+              <h3 class="ms-3" style="font-family: 'Advent Pro'; font-weight: 400; font-size: 1.2rem;">Eurasia - Ваш помощник для бронирования номеров. Каждое путешествие начинается с комфорта!</h3> <span class="ms-4"> </span>
+            </div>
+          </nav>
+    </header>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-9">
+                <div class="booking-form">
+                    <form>
+                        <div class="row g-3 align-items-center"> 
+                            <div class="col-md-3">
+                                <label for="city" class="form-label">Город</label>
+                                <input class="form-control" type="text" id="city" value="Eurasia" readonly>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="arrival" class="form-label">Заезд</label>
+                                <input class="form-control" type="date" id="arrival" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="departure" class="form-label">Выезд</label>
+                                <input class="form-control" type="date" id="departure" required>
+                            </div>
+                            <div class="col-md-3">
+                                <label for="guests" class="form-label">Кол-во гостей</label>
+                                <select class="form-control" id="guests">
+                                    <option value="0">Любое</option> <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>  
+        </div>
+        <div class="row mt-4" id="rooms-container">
+            <div class="col-md-9 d-flex flex-column">
+                <!-- Rooms will be dynamically added here -->
+            </div>
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <h3>Особенности номера</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="services" id="service1">
+                        <label class="form-check-label" for="service1">
+                          Сейф в номере
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="services" id="service2">
+                        <label class="form-check-label" for="service2">
+                          Можно с домашними животными
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="services" id="service3">
+                        <label class="form-check-label" for="service3">
+                          Кроватка для ребёнка
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="services" id="service5">
+                        <label class="form-check-label" for="service5">
+                          Wi-Fi
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="services" id="service6">
+                        <label class="form-check-label" for="service6">
+                          Две спальни
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="services" id="service7">
+                        <label class="form-check-label" for="service7">
+                          Гостиная
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="services" id="service8">
+                        <label class="form-check-label" for="service8">
+                          Кухня
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="services" id="service9">
+                        <label class="form-check-label" for="service9">
+                          Парковка
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="services" id="service10">
+                        <label class="form-check-label" for="service10">
+                          Вид на море
+                        </label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" name="services" id="breakfast-switch">
+                        <label class="form-check-label" for="breakfast-switch">Завтрак в номер</label>
+                    </div>
+                    <h3>Питание</h3>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="meal" id="meal1">
+                        <label class="form-check-label" for="meal1">
+                          Завтрак включен
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="meal" id="meal2">
+                        <label class="form-check-label" for="meal2">
+                          Обед включен
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="meal" id="meal3">
+                        <label class="form-check-label" for="meal3">
+                          Ужин включен
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="meal" id="meal4">
+                        <label class="form-check-label" for="meal4">
+                          Питание за дополнительную плату
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="meal" id="meal5">
+                        <label class="form-check-label" for="meal5">
+                          Без питания
+                        </label>
+                    </div>
+                    <h3>Цена</h3>
+                    <input type="range" id="price-range" min="1000" max="10000" value="1000" step="100">
+                    <div id="price-display">1000 - 10000 руб.</div>
+                </div>                
+            </div>
+        </div>
+    </div>
+     <!-- Модальное окно для бронирования -->
+     <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="bookingModalLabel">Бронирование номера</h1>
+                    <button type="button" class="btn-close"  aria-label="Close"></button> </div>
+                <div class="modal-body">
+                    <form id="bookingForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Ваше имя</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Ваш email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Ваш телефон</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="roomType" class="form-label">Тип номера</label>
+                            <input type="text" class="form-control" id="roomType" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="arrivalDate" class="form-label">Дата заезда</label>
+                            <input type="text" class="form-control" id="arrivalDate" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="departureDate" class="form-label">Дата выезда</label>
+                            <input type="text" class="form-control" id="departureDate" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookingFilters" class="form-label">Выбранные фильтры:</label>
+                            <div id="bookingFilters"></div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="roomPrice" class="form-label">ИТОГО:</label>
+                            <input type="text" class="form-control" id="roomPrice" readonly>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Подтвердить</button>
+                        <div id="bookingMessage" class="mt-3"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    const roomsData = [
+        { number: 1, guests: 2, title: "Двухместный номер", description: "Просторный двухместный номер, идеально подходящий для пар или друзей, путешествующих вместе. Оснащен двуспальной или двумя односпальными кроватями, уютной зоной отдыха и всем необходимым для комфортного пребывания. Наслаждайтесь совместными моментами в приятной обстановке.", price: 2500, image: "https://i.pinimg.com/736x/56/f3/dc/56f3dc8d0ac3b991fa64787901ed759f.jpg", services: ["Сейф в номере","Можно с домашними животными","Завтрак в номер"], meal: ["Завтрак включен"] },
+        { number: 2, guests: 1, title: "Одноместный номер", description: "Уютный и комфортный одноместный номер идеально подходит для соло-путешественников. Оснащен одной удобной кроватью, рабочим столом и необходимыми удобствами для комфортного проживания. Идеально для отдыха после насыщенного дня.", price: 2000, image: "https://i.pinimg.com/564x/f0/ea/8a/f0ea8a5d6010a3b95cd210dfa453c74a.jpg", services: ["Можно с домашними животными"], meal: ["Питание за дополнительную плату"] },
+        { number: 3, guests: 5, title: "Семейный номер", description: "Широкий семейный номер, который с комфор��ом разместит целую семью. Содержит одну двуспальную и одну односпальную кровать, а также дополнительные удобства, такие как холодильник и телевизор. Отличный выбор для семейных поездок.", price: 4000, image: "https://i.pinimg.com/564x/cb/a7/3b/cba73b2334ff034a35f121fcca3541bc.jpg", services: ["Кроватка для ребёнка"], meal: ["Завтрак включен"] },
+        { number: 4, guests: 2, title: "Люкс номер", description: "Роскошный люкс, предлагающий максимальный комфорт и стиль. Оснащен спальней с большой кроватью, отдельной зоной гостиной и приватной ванной комнатой. Идеален для особых случаев и тех, кто хочет порадовать себя высоким уровнем удобства.", price: 5500, image: "https://i.pinimg.com/564x/a3/8c/11/a38c11d9dd42ccfa96b4121fd62a4fde.jpg", services: ["Сейф в номере", "Завтрак в номер"], meal: ["Завтрак включен", "Обед включен", "Ужин включен"] },
+        { number: 5, guests: 1, title: "Комфортный номе��", description: "Уютный одноместный номер с всеми удобствами для комфортного проживания Более просторный номер с двуспальной кроватью, удобным диваном, телевизором, холодильником, бесплатным Wi-Fi, ванной комнатой с душем и ванной.", price: 2000, image: "https://i.pinimg.com/736x/fe/69/2c/fe692cd9551260c13843db3d8632e3b1.jpg", services: ["Wi-Fi", "Кухня"], meal: ["Без питания"] },
+        { number: 6, guests: 4, title: "Люкс с видом на море", description: "Элегантный номер с панорамным видом на море, отдельной спальней с большой двуспальной кроватью, просторной гостиной зоной с камином и диваном, телевизором, холодильником, кофемашиной, бесплатным Wi-Fi, ванной комнатой с ванной и душевой кабиной.", price: 10000, image: "https://i.pinimg.com/564x/8a/4f/34/8a4f34766559e562451644b6b2c6ada0.jpg", services: ["Сейф в номере", "Завтрак в номер","Кроватка для ребёнка","Гостиная"], meal: ["Завтрак включен", "Обед включен", "Ужин включен"] },
+        { number: 7, guests: 3, title: "Трехместный номер", description: "Комфортный номер для трех человек, оснащенный тремя односпальными кроватями, телевизором и всем необходимым.", price: 3000, image: "https://via.placeholder.com/350x150", services: ["Wi-Fi"], meal: ["Завтрак включен"] },
+        { number: 8, guests: 2, title: "Номер с балконом", description: "Двухместный номер с собственным балконом и прекрасным видом.", price: 2800, image: "https://via.placeholder.com/350x150", services: ["Wi-Fi", "Балкон"], meal: ["Питание за дополнительную плату"] },
+        { number: 9, guests: 4, title: "Семейный люкс", description: "Просторный семейный люкс с двумя спальнями и гостиной.", price: 6000, image: "https://via.placeholder.com/350x150", services: ["Wi-Fi", "Две спальни", "Гостиная"], meal: ["Завтрак включен"] },
+        { number: 10, guests: 2, title: "Стандартный номер", description: "Простой, но уютный двухместный номер.", price: 2200, image: "https://via.placeholder.com/350x150", services: ["Wi-Fi"], meal: ["Питание за дополнительную плату","Без питания"] },
+        { number: 11, guests: 1, title: "Эконом номер", description: "Небольшой одноместный номер по доступной цене.", price: 1500, image: "https://via.placeholder.com/350x150", services: ["Wi-Fi"], meal: ["Питание за дополнительную плату","Без питания"] },
+        { number: 12, guests: 4, title: "Апартаменты", description: "Просторные апартаменты с кухней и спальней.", price: 7000, image: "https://via.placeholder.com/350x150", services: ["Wi-Fi", "Кухня"], meal: ["Без питания"] }
+    ];   
+
+    const roomsContainer = document.getElementById('rooms-container');
+    const guestsSelect = document.getElementById('guests');
+    const priceRange = document.getElementById('price-range');
+    const priceDisplay = document.getElementById('price-display');
+    const breakfastSwitch = document.getElementById('breakfast-switch');
+    const arrivalInput = document.getElementById('arrival');
+    const departureInput = document.getElementById('departure');
+    const arrivalDateDisplay = document.getElementById('arrivalDate');
+    const departureDateDisplay = document.getElementById('departureDate');
+    const roomPriceDisplay = document.getElementById('roomPrice');
+
+    function filterRooms(rooms, filters) {
+        return rooms.filter(room => {
+            return Object.keys(filters).every(filterKey => {
+                const filterValues = filters[filterKey];
+                if (filterKey === 'price') {
+                    const [min, max] = filterValues;
+                    return room.price >= min && room.price <= max;
+                } else if (filterValues.length === 0) return true;
+                else {
+                    return filterValues.every(value => {
+                        return room[filterKey] && room[filterKey].some(roomValue => roomValue.toLowerCase().includes(value.toLowerCase()));
+                    });
+                }
+            });
+        });
+    }
+
+    function renderRooms(data) {
+        roomsContainer.querySelector('.col-md-9').innerHTML = ''; 
+        data.forEach(room => {
+            const card = `
+                <div class="card mb-4" data-guests="${room.guests}" data-room-number="${room.number}" data-room-price="${room.price}">
+                    <img src="${room.image}" class="card-img-top" alt="Номер ${room.number}">
+                    <div class="card-body">
+                        <h2 class="card-title">${room.title}</h2>
+                        <p class="card-text">${room.description}</p>
+                        <p class="card-text">Цена: ${room.price} руб/сутки</p>
+                        <button class="btn btn-primary btn-booking" data-bs-toggle="modal" data-bs-target="#bookingModal" data-room-price="${room.price}">Забронировать</button>
+                    </div>
+                </div>
+            `;
+            roomsContainer.querySelector('.col-md-9').insertAdjacentHTML('beforeend', card);
+        });
+        attachBookingListeners();
+    }
+
+    function attachBookingListeners() {
+        const bookingButtons = document.querySelectorAll('.btn-booking');
+        bookingButtons.forEach(button => {
+            button.addEventListener('click', (event) => {
+                const card = event.target.closest('.card');
+                const roomNumber = card.dataset.roomNumber;
+                const roomType = card.querySelector('.card-title').textContent;
+                const roomPrice = parseInt(card.dataset.roomPrice);
+                const filters = getFilters();
+                const arrivalDate = arrivalInput.value;
+                const departureDate = departureInput.value;
+
+                const totalPrice = calculateTotalPrice(roomPrice, filters, arrivalDate, departureDate);
+
+                document.getElementById('roomType').value = `Номер ${roomNumber} - ${roomType}`;
+                arrivalDateDisplay.value = arrivalDate;
+                departureDateDisplay.value = departureDate;
+                roomPriceDisplay.value = totalPrice; 
+                displayFiltersInModal(filters);
+            });
+        });
+    }
+
+    function calculateTotalPrice(roomPrice, filters, arrivalDate, departureDate) {
+        let totalPrice = roomPrice;
+        const oneDay = 24 * 60 * 60 * 1000; 
+        const diffDays = Math.round(Math.abs((new Date(departureDate) - new Date(arrivalDate)) / oneDay));
+
+        if (document.getElementById('breakfast-switch').checked) {
+            totalPrice += diffDays * 300; 
+        }
+        return totalPrice * diffDays;
+    }
+
+    function getFilters() {
+        const filters = {};
+        const checkboxes = document.querySelectorAll('.sidebar input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            const groupName = checkbox.name;
+            if (!filters[groupName]) filters[groupName] = [];
+            if (checkbox.checked) {
+                filters[groupName].push(checkbox.nextElementSibling.textContent.trim());
+            }
+        });
+        const minPrice = parseInt(priceRange.min);
+        const maxPrice = parseInt(priceRange.max);
+        const value = parseInt(priceRange.value);
+        filters.price = [value, maxPrice];
+        return filters;
+    }
+
+    const checkboxes = document.querySelectorAll('.sidebar input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const filters = getFilters();
+            let filteredRooms = filterRooms(roomsData, filters);
+            const selectedGuests = parseInt(guestsSelect.value);
+            filteredRooms = filteredRooms.filter(room => selectedGuests === 0 || room.guests >= selectedGuests);
+            renderRooms(filteredRooms);
+        });
+    });
+
+    guestsSelect.addEventListener('change', () => {
+        const filters = getFilters();
+        const selectedGuests = parseInt(guestsSelect.value);
+        let filteredRooms = roomsData.filter(room => selectedGuests === 0 || room.guests >= selectedGuests);
+        filteredRooms = filterRooms(filteredRooms, filters);
+        renderRooms(filteredRooms);
+    });
+
+    priceRange.addEventListener('input', () => {
+        const minPrice = parseInt(priceRange.min);
+        const maxPrice = parseInt(priceRange.max);
+        const value = parseInt(priceRange.value);
+        priceDisplay.textContent = `${value} - ${maxPrice} руб.`;
+
+        const filters = getFilters();
+        let filteredRooms = filterRooms(roomsData, filters);
+        const selectedGuests = parseInt(guestsSelect.value);
+        filteredRooms = filteredRooms.filter(room => selectedGuests === 0 || room.guests >= selectedGuests);
+        renderRooms(filteredRooms);
+    });
+
+    function displayFiltersInModal(filters) {
+        let servicesString = "";
+        let mealString = "";
+
+        if (filters.services && filters.services.length > 0) {
+            servicesString = "Услуги: " + filters.services.join(', ');
+        } else {
+            servicesString = "Услуги: Не выбрано";
+        }
+
+        if (filters.meal && filters.meal.length > 0) {
+            mealString = "Питание: " + filters.meal.join(', ');
+        } else {
+            mealString = "Питание: Не выбрано"; 
+        }
+
+        const filterString = `В номер входят:\n${servicesString}\n${mealString}`;
+        document.getElementById('bookingFilters').textContent = filterString;
+    }
+
+
+    renderRooms(roomsData);
+
+
+    const bookingForm = document.getElementById('bookingForm');
+    bookingForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const roomType = document.getElementById('roomType').value;
+        const messageDiv = document.getElementById('bookingMessage');
+
+        const message = `${name}, ваш ${roomType} успешно забронирован!`;
+        messageDiv.textContent = message;
+        messageDiv.style.display = 'block';
+    });
+    </script>
+     <footer class="d-flex justify-content-between align-items-start py-3 my-4 border-top">
+        <div class="text-start"style="font-family: 'Advent Pro'; font-weight: medium; font-size: 20px;">
+            <p class="mb-1 text-body-secondary">Часы работы:</p>
+            <p class="mb-2 text-body-secondary">Ресепшен: Круглосуточно</p>
+            <p class="mb-3 text-body-secondary">Бронирование: с 09:00 до 21:00</p>
+        </div>
+        
+        <div class="text-center mb-3">
+            <a href="/" class="link-body-emphasis text-decoration-none">
+                <img src="Evrasia.svg" alt="Eurasia" width="100" height="80" class="me-2">
+            </a>
+        </div>
+        
+        <div class="text-end" style="font-family: 'Advent Pro'; font-weight: medium; font-size: 20px;">
+            <p class="mb-1 text-body-secondary">Наш адрес:</p>
+            <p class="mb-1 text-body-secondary">Улица Ленина, 29,</p>
+            <p class="mb-1 text-body-secondary">г. Владимир, Россия</p>
+        </div>
+    </footer>
+</body>
+</html>

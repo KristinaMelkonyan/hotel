@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Caveat:wght@400..700&family=Marck+Script&display=swap");
+body {
+  font-family: "Advent Pro", sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+}
+
+a {
+  color: #4E4748 !important;
+  font-weight: bold !important;
+}
+
+h1, h2, h3, p, a, label {
+  font-family: "Advent Pro", sans-serif;
+}
+
+.ms-3 {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+.btn.btn-primary {
+  background-color: #837D7E;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-family: "Advent Pro", sans-serif;
+}
+
+.text-start,
+.text-end {
+  font-weight: medium;
+  font-size: 20px;
+}
+
+.mt-3 {
+  display: none;
+}
+
+.booking-form .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.form-control[readonly] {
+  background-color: #f0f0f0;
+}
+
+.form-group {
+  margin-bottom: 0;
+}
+
+.submit-btn {
+  width: 100%;
+}
+
+.sidebar {
+  background-color: #f0f0f0;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.card {
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.col-md-9 {
+  display: flex;
+  flex-direction: column;
+}
+
+.row.mt-4 {
+  margin-left: 20px;
+}
+
+.map-container {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.map {
+  height: 300px;
+  background-color: #eee;
+  border-radius: 5px;
+}
+
+.example-text {
+  font-family: "Advent Pro", sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=main.css.map */

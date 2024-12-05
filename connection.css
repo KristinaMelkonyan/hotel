@@ -1,0 +1,44 @@
+header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.nav {
+    margin-left: 10px; /* Убираем отступы слева */
+    display: flex;
+    justify-content: center;
+}
+img {
+    height: 100px;
+    width: 150px;
+}
+h1{
+    text-align: center;
+    font-family: 'Advent Pro'; 
+    font-weight: medium; 
+    font-size: 40px;
+}
+h2{
+    font-family: 'Advent Pro'; 
+    font-weight: medium; 
+    font-size: 40px !important; 
+    margin-left: 5px;  
+}
+.vertical{
+    border-left: 3px solid black;
+    height: 45px;
+    margin-top: 10px;
+}
+p{
+    font-family: 'Advent Pro';  
+    font-size: 30px;  
+}
+a{
+    font-family: 'Advent Pro';
+    font-weight: bold !important;
+    color: #4E4748 !important;
+}
+.con{
+    margin-left: 50px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Caveat:wght@400..700&family=Marck+Script&display=swap');
